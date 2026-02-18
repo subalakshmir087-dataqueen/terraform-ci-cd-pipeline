@@ -28,3 +28,7 @@ pipeline {
             steps {
                 sh 'docker run -d --name my-app-container my-app'
             }
+        }
+    } // closes stages
+} // closes pipeline
+
