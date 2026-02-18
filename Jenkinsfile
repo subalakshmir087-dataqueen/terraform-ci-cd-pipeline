@@ -1,14 +1,12 @@
 pipeline {
     agent any
 
-    environment {
-        GIT_SSH_COMMAND = "ssh -i /var/lib/jenkins/.ssh/id_ed25519 -o UserKnownHostsFile=/var/lib/jenkins/.ssh/known_hosts -o StrictHostKeyChecking=yes"
-    }
-
     stages {
         stage('Clone Repo') {
             steps {
-                git url: 'git@github.com:subalakshmir087-dataqueen/terraform-ci-cd-pipeline.git'
+                git branch: 'main',  // <- explicitly use 'main'
+                    url: 'git@github.com:subalakshmir087-dataqueen/terraform-ci-cd-pipeline.git',
+                    credentialsId: 'github-ssh-key'
             }
         }
 
@@ -29,6 +27,5 @@ pipeline {
                 sh 'docker run -d --name my-app-container my-app'
             }
         }
-    } // closes stages
-} // closes pipeline
-
+    }
+}
