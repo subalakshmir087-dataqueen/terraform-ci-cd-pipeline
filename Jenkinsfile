@@ -27,3 +27,4 @@ pipeline {
         stage('Run Docker') {
             steps {
                 sh 'docker run -d --name my-app-container my-app'
+            }
