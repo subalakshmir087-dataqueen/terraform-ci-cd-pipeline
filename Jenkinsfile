@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git branch: 'main', url: 'git@github.com:yourusername/terraform-ci-cd-pipeline.git'
+                git branch: 'main', url: 'https://github.com/subalakshmir087-dataqueen/terraform-ci-cd-pipeline.git'
             }
         }
         stage('Build Docker') {
@@ -18,3 +18,4 @@ pipeline {
         }
     }
 }
+
