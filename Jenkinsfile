@@ -18,7 +18,7 @@ pipeline {
 
         stage('Build Docker') {
             steps {
-                sh 'docker build -t my-app .'
+                sh 'docker build -t my-app ./app'
             }
         }
 
@@ -29,3 +29,4 @@ pipeline {
         }
     }
 }
+
