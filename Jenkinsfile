@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 git url: 'git@github.com:subalakshmir087-dataqueen/terraform-ci-cd-pipeline.git',
-                    credentialsId: 'd506eac9-7617-4f23-8cb6-728669d61220'
+                    credentialsId: 'github-ssh-key'
             }
         }
 
@@ -28,6 +28,7 @@ pipeline {
         }
     }
 }
+
 
 
 
